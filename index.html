@@ -190,23 +190,32 @@
     </div>
     
       <div class="mailing">
+          
+    <form id="subscribe">     
        <div class="form">  
          <h1>Join our mailing list for updates </h1>
             
             <section class="row">
+                <p id="sign-up-response"></p>
+                
             <div class="grid-2" ><label for="name">Name</label></div><!---
---><div class="grid-10" style="margin: 1%;"><input type="text" class="form-control" id="name" placeholder="Name"> 
+--><div class="grid-10" style="margin: 1%;">
+                
+                <input type="text" class="form-control" name="name" id="name" placeholder="Name"> 
 </div>            </section>
             
             
           <section class="row">
             <div class="grid-2"><label for="name">Email</label></div><!---
---><div class="grid-10" style="margin: 1%;"><input type="text" class="form-control" id="name" placeholder="Email"> 
+--><div class="grid-10" style="margin: 1%;">
+              
+              <input type="text" class="form-control" name="email" id="email" placeholder="Email"> 
 </div>            </section>
            
            
-      <center>     <button type="submit">Subscribe!</button></center>
+      <center>     <input type="submit" id="submit" value="Subscribe!"/></center>
         </div>
+          </form>
           
     </div>
     
@@ -226,6 +235,34 @@
        }
    });
     }
+});
+        
+        
+        $(document).ready(function(){
+            $('#subscribe').submit(function(e){
+                
+                // don't submit the form, please
+					e.preventDefault();	
+ 
+        //do our ajax stuff here
+        var form = $(this),
+    responseMsg = $('#sign-up-response')
+                
+               responseMsg.hide().addClass('response-waiting').text('Please Wait...').fadeIn(200);
+                
+                $.ajax({
+   
+                    method: "POST",
+                    url: "subscribe.php",
+                    data: form.serialize(),
+                    dataType: "json"
+                    }).done(function( json ) {
+                    
+						responseMsg.html("Hello " + json.name);
+                    
+					  });
+
+    });
 });
     
     </script>

@@ -227,13 +227,26 @@ header {
   background-color: #eee;
   padding: 50px; }
 
+#sign-up-response {
+  text-align: center;
+  padding-bottom: 20px; }
+
+.response-waiting {
+  color: #d8bd1e; }
+
+.response-success {
+  color: #0fba34; }
+
+.response-error {
+  color: #ba1c0f; }
+
 .form {
   width: 60%;
   margin: 0 auto; }
   .form h1 {
     text-align: center;
     font-size: 38px; }
-  .form button {
+  .form #submit {
     display: inline-block;
     text-align: center;
     cursor: pointer;
