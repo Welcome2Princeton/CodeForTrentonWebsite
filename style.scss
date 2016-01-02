@@ -130,7 +130,7 @@ header {
    
 
 .welcome {
-height: 80vh;    
+height: 100vh;    
  background: url('img/bridge.jpg');
 background-size: cover;
     
@@ -141,7 +141,7 @@ background-size: cover;
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 20vh;
+    bottom: 0vh;
     left: 0;
     background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
         opacity: .8; }
@@ -223,7 +223,7 @@ background-size: cover;
         
         a { width: 50%;
             background-color: #eee; 
-            padding:20px 10%;
+            padding:20px 5px;
             margin: 20px 0}
     }
     
@@ -288,7 +288,7 @@ background-size: cover;
     h1 {
      text-align: center;
         font-size: 38px;
-        
+         
     }
     
     #submit {
