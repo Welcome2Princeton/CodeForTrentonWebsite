@@ -248,7 +248,7 @@
         var form = $(this),
     responseMsg = $('#sign-up-response')
                 
-               responseMsg.hide().addClass('response-waiting').text('Please Wait...').fadeIn(200);
+             responseMsg.hide().addClass('response-waiting').text('Please Wait...').fadeIn(200);
                 
                 $.ajax({
    
@@ -258,7 +258,35 @@
                     dataType: "json"
                     }).done(function( json ) {
                     
-						responseMsg.html("Hello " + json.name);
+						//setup variables
+                
+                var    klass = '';
+ 
+                //response conditional
+                switch(json.status){
+                    case 'error':
+                        klass = 'response-error';
+                    break;
+                    case 'success':
+                        klass = 'response-success';
+                    break;  
+                }
+                    
+                    
+                    //show reponse message
+                responseMsg.fadeOut(500,function(){
+                    $(this).removeClass('response-waiting')
+                           .addClass(klass)
+                           .text(json.message)
+                           .fadeIn(200,function(){
+                               //set timeout to hide response message
+                               setTimeout(function(){
+                                   responseMsg.fadeOut(500,function(){
+                                       $(this).removeClass(klass);
+                                   });
+                               },5000);
+                            });
+                 });
                     
 					  });
 
