@@ -25,7 +25,7 @@ h1 {
 p {
     line-height: 32px;
     
-}
+} 
 
 
 img {
@@ -258,6 +258,28 @@ background-size: cover;
     
 }
 
+#sign-up-response {
+    
+ text-align: center;
+    padding-bottom: 20px;
+    
+}
+
+.response-waiting {
+    
+ color: #d8bd1e;   
+}
+
+.response-success {
+    
+ color: #0fba34 ;   
+}
+
+.response-error {
+    
+ color: #ba1c0f;   
+}
+
 .form {
     
  width: 60%;
@@ -269,7 +291,7 @@ background-size: cover;
         
     }
     
-    button {
+    #submit {
             display: inline-block;
     text-align: center;
     cursor: pointer;
