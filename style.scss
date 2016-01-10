@@ -63,6 +63,7 @@ $margin: 2.5%;
     .grid-#{$i} {
       width: 100%;
      display: inline-block;
+       
         
    // background-color: antiquewhite;
         
@@ -70,6 +71,7 @@ $margin: 2.5%;
             width: $width;
             margin: $margin;
             vertical-align: middle;
+            
             
         }   
         
@@ -177,7 +179,12 @@ background-size: cover;
         text-decoration: none;
         
     }
+  
     
+      @media(max-width: 800px) {
+         width: 90%;
+          
+      }
     
 }
 
@@ -185,7 +192,26 @@ background-size: cover;
 }
 
 
+.about {
+   @media(max-width: 800px) {
+   p {
+            padding-bottom: 30px;
+            
+        }          
+      }   
+    
+}
 
+.join {
+   @media(max-width: 800px) {
+        .grid-4 {
+            padding-bottom: 30px;
+            
+        }
+          
+      }   
+    
+}
 
 .about, .projects, .join {
     
@@ -204,8 +230,34 @@ background-size: cover;
     
  border: 3px solid #eee;
     padding: 20px;
+box-sizing: border-box;
     
-    box-sizing: border-box;
+    p {
+        
+    line-height: normal;    
+    }
+    
+       @media(max-width: 800px) {
+         margin: 20px 0px;
+           
+           img {
+               width: 90%;
+               margin-left: 5%;
+           }
+           
+           p {
+             margin-left: 5%;  
+               padding: 10px 0px;
+               
+           }
+           
+           h2 {
+               
+            text-align: center;
+              padding-bottom: 10px;
+           }
+            
+        }  
     
     
     h2 {
@@ -281,6 +333,25 @@ background-size: cover;
 }
 
 .form {
+    
+     
+      @media(max-width: 800px) {
+         width: 90%;
+       
+        label {
+            font-size: 20px;
+         padding-left: 15px;
+            margin-bottom:  40px;
+        }
+          
+          .form-control {
+              
+          margin: 10px 0px 15px 0px;
+          }
+          
+          
+      }
+    
     
  width: 60%;
     margin: 0 auto;
