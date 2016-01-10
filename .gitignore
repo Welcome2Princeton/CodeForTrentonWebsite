@@ -1,1 +1,11 @@
+<<<<<<< HEAD
 config.php
+=======
+config.php
+
+# Created by https://www.gitignore.io/api/sass
+
+### Sass ###
+.sass-cache/
+*.css.map
+>>>>>>> 21a980245ff90671b24761fd99e6696bffed9fe3
