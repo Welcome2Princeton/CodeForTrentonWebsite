@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code for Trenton</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    
+    <header>
+            
+        <a href="index.html" class="logo">Code for Trenton</a>
+        
+        <nav>
+                    <a href="#">About</a>
+                      <a href="#">Projects</a>
+                      <a href="#">Contact</a>
+                 
+            </nav>
+    </header>
+    <div class="header">
+        
+      
+
+       
+            <h1>Menus of Trenton</h1>
+       
+        
+ </div>
+    
+    <div class="cft-section">    
+    
+    <section class="row"> 
+    
+        <div class="grid-12">   
+            
+            <h2>About This Project</h2>
+            
+            <p>Code for Trenton is part of the larger <a href="https://www.codeforamerica.org/brigade/about/">Code for America</a> organization. We believe there is great opportunity today for government and cities to be improved by a few passionate, tech savvy indiviudals. By building open source technology and design solutions created for the people, by the people we have the power to make Trenton more connected, safe, informative, and thriving. We are focused not only on empowering the city's tech savvy residents but teaching the technologists of tomorrow. Whether you are still in grade school, college, or someone of any age eager to start making a difference with tech, we have something for you. Join us in making Trenton a better place. </p>
+            
+          
+        
+        </div>
+        </section>    
+    
+    </div>
+    
+        <div class="cft-section">    
+    
+    <section class="row progress"> 
+    <h2>Progress</h2>
+        <div class="grid-4">   
+            
+            <h3>Backlog</h3>
+            
+            <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+                
+            </ul>
+        </div><!--
+--><div class="grid-4">   
+            
+            <h3>Doing</h3>
+            
+            <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+                
+        </ul></div><!--
+--><div class="grid-4">   
+            
+            <h3>Done</h3>
+            
+            <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+                
+            </ul>
+        </div>
+        </section>    
+    
+    </div>
+    
+        
+    
+      <div class="mailing">
+          
+    <form id="subscribe">     
+       <div class="form">  
+         <h1>Want to work on projects like this? Join our mailing list and get involved on <a href="">Meetup</a> </h1>
+            
+            <section class="row">
+                <p id="sign-up-response"></p>
+                
+            <div class="grid-2" ><label for="name">Name</label></div><!---
+--><div class="grid-10" style="margin: 1%;">
+                
+                <input type="text" class="form-control" name="name" id="name" placeholder="Name"> 
+</div>            </section>
+            
+            
+          <section class="row">
+            <div class="grid-2"><label for="name">Email</label></div><!---
+--><div class="grid-10" style="margin: 1%;">
+              
+              <input type="text" class="form-control" name="email" id="email" placeholder="Email"> 
+</div>            </section>
+           
+           
+      <center>     <input type="submit" id="submit" value="Subscribe!"/></center>
+        </div>
+          </form>
+          
+    </div>
+    
+
+    
+    
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+    $(document).ready(function(){       
+   var scroll_start = 0;
+   var startchange = $('.about');
+   var offset = startchange.offset();
+    if (startchange.length){
+   $(document).scroll(function() { 
+      scroll_start = $(this).scrollTop();
+      if(scroll_start > offset.top) {
+          $("header").css({'background-color': '#1e1e1e', opacity: .95});
+       } else {
+          $('header').css('background-color', 'transparent');
+       }
+   });
+    }
+});
+        
+        
+   
+    
+    </script>
+    
+</body>
+</html>

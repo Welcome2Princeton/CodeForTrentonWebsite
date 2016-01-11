@@ -1,5 +1,8 @@
 /*main styles*/ 
 
+
+$cft-red : #cf1b41;
+
 * {
     
  margin: 0px;
@@ -15,10 +18,13 @@ body {
 
 
 
+
 h1 {
     
  font-size:  46px;   
       padding: 20px 0px;
+    font-family: "Georgia";
+    font-weight: normal;
 }
 
 
@@ -37,7 +43,14 @@ img {
 a {
     
  text-decoration: none;
-
+font-weight: bold;
+    color: $cft-red;
+    transition: color .5s;
+    -webkit-transition: color .5s;
+    &:hover {
+        
+     color: darken($cft-red, 20%);   
+    }
 }
 
 
@@ -178,11 +191,21 @@ background-size: cover;
         color: #fff;
         text-decoration: none;
         
+      transition: background-color 1s, color 1s;
+        -webkit-transition: background-color 1s, color 1s;
+        &:hover {
+            
+         background-color: white;
+            color: #1e1e1e ;
+        }
+        
     }
+    
+    
   
     
       @media(max-width: 800px) {
-         width: 90%;
+         width: 80%;
           
       }
     
@@ -213,9 +236,16 @@ background-size: cover;
     
 }
 
-.about, .projects, .join {
+.cft-section {
     
  margin: 3% 7.5%;
+    
+    h2 {
+        
+     font-family: Georgia;
+        font-weight: normal;
+        padding-bottom: 20px;
+    }
     
 }
 
@@ -358,7 +388,7 @@ box-sizing: border-box;
     
     h1 {
      text-align: center;
-        font-size: 38px;
+        font-size: 34px;
          
     }
     
@@ -374,4 +404,81 @@ box-sizing: border-box;
         color: #fff;
     border: 1px solid transparent;
     }
+}
+
+
+
+/** other pages **/
+
+
+.header {
+height: 40vh;    
+ background: url('img/bridge.jpg');
+background-size: cover;
+    
+
+    
+    &:before { 
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 60vh;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+        opacity: .8; }
+
+
+h1 {
+   
+    position: relative;
+    text-align: center;
+    top: 40%;
+    width: 80%;
+    color: #fff;
+    margin: 0 auto;
+
+   
+    
+    
+ 
+   
+
+}
+    
+}
+
+
+.progress {
+    
+    h2{
+        margin-left: 2.5%;   
+    }
+    
+    li {
+        
+        margin-left: 15px;
+    }
+ .grid-4 {
+     
+  background-color: #eee;
+     padding: 30px;
+     box-sizing: border-box;
+ }
+    
+    
+h3 {
+    
+ font-family: "Lato";  
+    margin-bottom: 20px;
+ 
+    
+}
+}
+
+
+.footer{
+    
+ height: 100px;
+    background-color: #1e1e1e;
 }
