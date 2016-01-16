@@ -227,10 +227,16 @@ background-size: cover;
 
 .join {
    @media(max-width: 800px) {
-        .grid-4 {
+        div {
             padding-bottom: 30px;
+            text-align: center;
             
         }
+       
+       img {
+           width: 40%;
+           padding-top: 20px;
+       }
           
       }   
     
@@ -249,6 +255,15 @@ background-size: cover;
     
 }
 
+
+.projects  {
+    
+  a {
+      color: black;  
+        font-weight: normal;
+    }   
+}
+
 .projects h1, .join h1 {
  
     margin: 0 2.5%;
@@ -261,6 +276,8 @@ background-size: cover;
  border: 3px solid #eee;
     padding: 20px;
 box-sizing: border-box;
+    
+   
     
     p {
         
@@ -481,4 +498,25 @@ h3 {
     
  height: 100px;
     background-color: #1e1e1e;
+    
+    color: lighten(#1e1e1e, 40%);
+    font-size: 14px;
+}
+
+.press {
+    ul {
+          list-style-type: none;
+    }
+    
+    li {
+        
+     padding-bottom: 20px;   
+    }
+    
+ a {
+     
+  font-size: 18px;
+     border-bottom: 1px solid #1e1e1e;
+     
+ }
 }

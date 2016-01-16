@@ -10,13 +10,13 @@
 
 <body>
     
-    <header>
+    <header data-home="true">
             
         <a href="" class="logo">Code for Trenton</a>
         
         <nav>
-                    <a href="#">About</a>
-                      <a href="#">Projects</a>
+                    <a href="about.html">About</a>
+                      <a href="index.html#proj">Projects</a>
                       <a href="#">Contact</a>
                  
             </nav>
@@ -29,7 +29,7 @@
             <h1>We are Code for Trenton</h1>
             <p>We are a  group of Trenton residents and students passionate about bettering our community by developing multimedia projects and encouraging a new generation of Trenton residents to get engaged in technology and design.</p>  
                 
-               <center> <a href="#">Get Involved</a></center> 
+               <center> <a href="#join">Get Involved</a></center> 
                 
             </div>
         
@@ -58,12 +58,12 @@
     
     </div>
     
+    <h1 style="margin-left: 10%" id="proj">Current Projects</h1>
+    <div class="projects cft-section" style="margin-top: 0%;">    
     
-    <div class="projects cft-section">    
-    <h1>Current Projects</h1>
     <section class="row"> 
     
-        <div class="grid-6 project">  
+     <a href="menuproject.html">   <div class="grid-6 project">  
             <h2>Menus of Trenton</h2>
             <section class="row">
             
@@ -79,88 +79,67 @@
             </section>
             
             
-           <nav>
-               
-               <a href="">Project Page</a>
-            
-            <a href="">Github Code</a>  </nav> 
-       </div><!---
----><div class="grid-6 project">  
-            <h2>Square2</h2>
-            <section class="row">
-            
-                <div class="grid-6">
-                    
-                    <img src="https://d.zmtcdn.com/data/menus/011/17229011/e6d1d8d36502eabb9cbe7a3fc9177c87.jpg">
-                    
-                </div><!---
---><div class="grid-6">
-                   <p>A digital compilation of all the city's menus for ease of access and increased traffic</p>
-                    
-                </div>
-            </section>
-            
-            
-           <nav>
-               
-               <a href="">Project Page</a>
-            
-            <a href="">Github Code</a>  </nav> 
-       </div>
-        </section> 
         
-         <section class="row"> 
-    
-        <div class="grid-6 project">  
-            <h2>Menus of Trenton</h2>
+       </div></a><!---
+---><a href="http://www.square2nj.org"><div class="grid-6 project">  
+      <h2>Square 2</h2>
             <section class="row">
             
                 <div class="grid-6">
                     
-                    <img src="https://d.zmtcdn.com/data/menus/011/17229011/e6d1d8d36502eabb9cbe7a3fc9177c87.jpg">
+                    <img src="img/square2.png">
                     
                 </div><!---
 --><div class="grid-6">
-                   <p>A digital compilation of all the city's menus for ease of access and increased traffic</p>
+                   <p>Square 2 is a free online and mobile resource for formerly incarcerated residents of Mercer County, providing searchable, up-to-date information about available resources in the areas of employment, education, housing, identification, health, and family. </p>
+                    
+                </div>
+            </section>
+            
+   
+       </div></a>
+   
+        <div class="grid-6 project">  
+            <h2>STEM Video Game Challenge</h2>
+            <section class="row">
+            
+                <div class="grid-6">
+                    
+                    <img src="img/stem.jpg">
+                    
+                </div><!---
+--><div class="grid-6">
+                   <p>Code for Trenton is planning to mentor Trenton students and create a series of workshops to help them enter the 2016 STEM Video Game Challenge! More details soon.</p>
                     
                 </div>
             </section>
             
             
-           <nav>
-               
-               <a href="">Project Page</a>
-            
-            <a href="">Github Code</a>  </nav> 
+          
        </div><!---
 ---><div class="grid-6 project">  
-            <h2>Menus of Trenton</h2>
+            <h2>Solve City</h2>
             <section class="row">
             
                 <div class="grid-6">
                     
-                    <img src="https://d.zmtcdn.com/data/menus/011/17229011/e6d1d8d36502eabb9cbe7a3fc9177c87.jpg">
+                    <img src="img/solvecity.png">
                     
                 </div><!---
 --><div class="grid-6">
-                   A digital compilation of all the city's menus for ease of access and increased traffic
-                    
+                  An app developed by TCNJ students and continued by Code For Trenton, its purpose is to empower Trenton citizens to report and map infrastructure problems in the city from their phones.
                 </div>
             </section>
             
             
-           <nav>
-               
-               <a href="">Project Page</a>
-            
-            <a href="">Github Code</a>  </nav> 
+          
        </div>
         </section> 
     
     </div>
     
 
-    <div class="join cft-section">    
+    <div class="join cft-section" id="join">    
      <h1>Get Involved</h1>
     <section class="row"> 
     
@@ -244,83 +223,27 @@
     </div>
     
     
-    <div class="footer"></div>
+    <div class="footer">
+    <section class="row">
+        <div class="grid-8">
+        Site Created by The Code For Trenton Team
+        </div>    
+        <div class="grid-3">
+        
+        </div>  
+        
+    </section>
+    
+    
+    </div>
+    
+
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script>
-    $(document).ready(function(){       
-   var scroll_start = 0;
-   var startchange = $('.about');
-   var offset = startchange.offset();
-    if (startchange.length){
-   $(document).scroll(function() { 
-      scroll_start = $(this).scrollTop();
-      if(scroll_start > offset.top) {
-          $("header").css({'background-color': '#1e1e1e', opacity: .95});
-       } else {
-          $('header').css('background-color', 'transparent');
-       }
-   });
-    }
-});
-        
-        
-        $(document).ready(function(){
-            $('#subscribe').submit(function(e){
-                
-                // don't submit the form, please
-					e.preventDefault();	
- 
-        //do our ajax stuff here
-        var form = $(this),
-    responseMsg = $('#sign-up-response')
-                
-             responseMsg.hide().addClass('response-waiting').text('Please Wait...').fadeIn(200);
-                
-                $.ajax({
-   
-                    method: "POST",
-                    url: "subscribe.php",
-                    data: form.serialize(),
-                    dataType: "json"
-                    }).done(function( json ) {
-                    
-						//setup variables
-                
-                var    klass = '';
- 
-                //response conditional
-                switch(json.status){
-                    case 'error':
-                        klass = 'response-error';
-                    break;
-                    case 'success':
-                        klass = 'response-success';
-                    break;  
-                }
-                    
-                    
-                    //show reponse message
-                responseMsg.fadeOut(500,function(){
-                    $(this).removeClass('response-waiting')
-                           .addClass(klass)
-                           .text(json.message)
-                           .fadeIn(200,function(){
-                               //set timeout to hide response message
-                               setTimeout(function(){
-                                   responseMsg.fadeOut(500,function(){
-                                       $(this).removeClass(klass);
-                                   });
-                               },5000);
-                            });
-                 });
-                    
-					  });
-
-    });
-});
+        <script src="js/masonry.js"></script>
     
-    </script>
+    <script>var home = true;</script>
+    <script src=js/script.js></script>
     
 </body>
 </html>

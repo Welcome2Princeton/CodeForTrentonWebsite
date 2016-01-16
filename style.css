@@ -207,8 +207,12 @@ header {
     padding-bottom: 30px; } }
 
 @media (max-width: 800px) {
-  .join .grid-4 {
-    padding-bottom: 30px; } }
+  .join div {
+    padding-bottom: 30px;
+    text-align: center; }
+  .join img {
+    width: 40%;
+    padding-top: 20px; } }
 
 .cft-section {
   margin: 3% 7.5%; }
@@ -216,6 +220,10 @@ header {
     font-family: Georgia;
     font-weight: normal;
     padding-bottom: 20px; }
+
+.projects a {
+  color: black;
+  font-weight: normal; }
 
 .projects h1, .join h1 {
   margin: 0 2.5%; }
@@ -345,6 +353,16 @@ header {
 
 .footer {
   height: 100px;
-  background-color: #1e1e1e; }
+  background-color: #1e1e1e;
+  color: #848484;
+  font-size: 14px; }
+
+.press ul {
+  list-style-type: none; }
+.press li {
+  padding-bottom: 20px; }
+.press a {
+  font-size: 18px;
+  border-bottom: 1px solid #1e1e1e; }
 
 /*# sourceMappingURL=style.css.map */
