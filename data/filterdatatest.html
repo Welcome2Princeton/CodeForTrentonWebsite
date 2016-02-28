@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title id="resttitle">DKAN example</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+        <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+	<div style="max-width:900px;">
+		<table class="paginated" id="restaurantsTable">
+			<thead>
+				<tr>
+					<td>Minimum age:</td><td><input type="text" id="min" name="min"></td>
+				</tr>
+				<tr>
+					<td>Maximum age:</td><td><input type="text" id="max" name="max"></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" id="addr11" name="address" value="11">:11</td>
+					<td><input type="checkbox" id="addr12" name="address" value="12">:12</td>
+					<td><input type="checkbox" id="tel60969" name="phone" value="10">:ph</td>
+				</tr>
+				<tr>
+					<th class="col">Name</th><th class="col">Location</th><th class="col">Phone</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+	
+		</table>
+	</div>
+	  
+  <script>
+    var url = "http://live-codefortrenton.pantheon.io/api/action/datastore/search.jsonp?resource_id=c912e749-4cb7-4209-9c3b-c96706e6934c&limit=200";
+	
+  	/*
+  	$.getJSON(pages).done(function(pageData){
+		var pages = pageData["results"];
+		var page = pages[2];
+		$('#dataname').text(page.url + " | " + page.name);
+	});
+	*/
+	
+    $.ajax( url, {
+    	dataType:'jsonp',
+    	crossDomain: true,
+    	jsonpCallback:'gatherData'
+    });
+    function gatherData( data ) {
+		/*
+		$.each(data.result.records, function() {
+			$.each(this, function(index, element) {
+				var $new_row = "<tr><td>"+element.Name+"</td><td>"+element.Street+"</td><td>"+element.Phone+"</td></tr>";
+				$('#myTable').append($new_row);
+			});
+		});
+		*/
+		
+		//$('#resttitle').innerHTML("DKAN example | Menus: filtered");
+		
+		for(var key in data.result.records) {
+		    if(data.result.records.hasOwnProperty(key)) {
+				var e	= data.result.records[key];	// e is for element :D
+				/*
+					"Name": "Quick Mart",
+					"Street": "123 Main Street",
+					"City": "Anytown",
+					"Zipcode": "00000",
+					"Phone": "8005551234",
+					"Latitude": 99.00000,
+					"Longitude": -99.00000
+				*/
+				var $new_row = "<tr><td>"+e.Name+'</td><td><a href="https://www.google.com/maps/@'+e.Latitude+","+e.Longitude+',16z">'+e.Street+"</a></td><td>";
+				if(e.Phone != "blank") {
+					$new_row = $new_row + '<a href="tel:'+e.Phone+'">'+e.Phone+"</a>";
+				} else {
+					$new_row = $new_row + e.Phone;
+				}
+				$new_row = $new_row + "</td></tr>";
+				$('#restaurantsTable').append($new_row);
+		    }
+		}
+		
+		$('#restaurantsTable').DataTable({ "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]] });
+	    var table = $('#restaurantsTable').DataTable();
+     
+	    // Event listener to the two range filtering inputs to redraw on input
+	    $('#min, #max, #tel60969, #addr11, #addr12').keyup( function() {
+	        table.draw();
+	    } );
+	}
+	
+	/* Custom filtering function which will search data in column four between two values */
+	$.fn.dataTable.ext.search.push(
+	    function( settings, data, dataIndex ) {
+	        var min = parseInt( $('#min').val(), 10 );
+	        var max = parseInt( $('#max').val(), 10 );
+	        var tel = parseInt( $('#tel60969').val(), 10 );
+	        var a11 = parseInt( $('#addr11').val(), 10 );
+	        var a12 = parseInt( $('#addr12').val(), 10 );
+	        var age = parseFloat( data[2] ) || 0; // use data for the age column
+			
+			var evalAge = evalTel = evalA11 = evalA12 = false;
+			
+			evalAge = ( isNaN( min ) && isNaN( max ) ) ||
+			( isNaN( min ) && age <= max ) ||
+			( min <= age   && isNaN( max ) ) ||
+			( min <= age   && age <= max );
+			
+			evalTel = ( tel >= 10 );
+			evalA11 = ( a11 >= 10 );
+			evalA12 = ( a12 >= 10 );
+ 
+	        if ( evalAge || evalTel || evalA11 || evalA12 )	{
+	            return true;
+	        }
+	        return false;
+	    }
+	);
+ 
+ 	/*
+	$(document).ready(function() {
+	    var table = $('#restaurantsTable').DataTable();
+     
+	    // Event listener to the two range filtering inputs to redraw on input
+	    $('#min, #max, #tel60969, #addr11, #addr12').keyup( function() {
+	        table.draw();
+	    } );
+	} );
+	*/
+</script>
+</body>
+</html>

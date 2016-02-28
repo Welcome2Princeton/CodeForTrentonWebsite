@@ -1,17 +1,22 @@
-/*main styles*/
+/*tchs reporting tool styles*/
 * {
   margin: 0px;
   padding: 0px; }
 
 body {
   font-family: 'Lato', sans-serif;
-  font-size: 18px; }
+  font-size: 18px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.embed-form-div {
+	margin:0 auto;
+}
 
 h1 {
   font-size: 46px;
-  padding: 20px 0px;
-  font-family: "Georgia";
-  font-weight: normal; }
+  padding: 20px 0px; }
 
 p {
   line-height: 32px; }
@@ -20,13 +25,7 @@ img {
   width: 100%; }
 
 a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #cf1b41;
-  transition: color .5s;
-  -webkit-transition: color .5s; }
-  a:hover {
-    color: #750f25; }
+  text-decoration: none; }
 
 /*grid*/
 .row {
@@ -141,16 +140,7 @@ a {
       vertical-align: middle; } }
 
 /*end grid */
-/*navbar*/
-.show {
-  background-color: black; }
-
-.transition {
-  -webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out; }
-
+/*navbar
 header {
   position: fixed;
   top: 0px;
@@ -176,7 +166,7 @@ header {
 
 /*end navbar */
 .welcome {
-  height: 100vh;
+  height: 40vh;
   background: url("img/bridge.jpg");
   background-size: cover; }
   .welcome:before {
@@ -184,7 +174,7 @@ header {
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0vh;
+    bottom: 60vh;
     left: 0;
     background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
     opacity: .8; }
@@ -201,38 +191,10 @@ header {
       padding: 20px 30px;
       border: 2px solid #fff;
       color: #fff;
-      text-decoration: none;
-      transition: background-color 1s, color 1s;
-      -webkit-transition: background-color 1s, color 1s; }
-      .welcome .intro a:hover {
-        background-color: white;
-        color: #1e1e1e; }
-    @media (max-width: 800px) {
-      .welcome .intro {
-        width: 80%; } }
+      text-decoration: none; }
 
-@media (max-width: 800px) {
-  .about p {
-    padding-bottom: 30px; } }
-
-@media (max-width: 800px) {
-  .join div {
-    padding-bottom: 30px;
-    text-align: center; }
-  .join img {
-    width: 40%;
-    padding-top: 20px; } }
-
-.cft-section {
+.about, .projects, .join {
   margin: 3% 7.5%; }
-  .cft-section h2 {
-    font-family: Georgia;
-    font-weight: normal;
-    padding-bottom: 20px; }
-
-.projects a {
-  color: black;
-  font-weight: normal; }
 
 .projects h1, .join h1 {
   margin: 0 2.5%; }
@@ -241,20 +203,6 @@ header {
   border: 3px solid #eee;
   padding: 20px;
   box-sizing: border-box; }
-  .project p {
-    line-height: normal; }
-  @media (max-width: 800px) {
-    .project {
-      margin: 20px 0px; }
-      .project img {
-        width: 90%;
-        margin-left: 5%; }
-      .project p {
-        margin-left: 5%;
-        padding: 10px 0px; }
-      .project h2 {
-        text-align: center;
-        padding-bottom: 10px; } }
   .project h2 {
     margin: 0 2.5%; }
   .project a {
@@ -265,7 +213,7 @@ header {
     .project nav a {
       width: 50%;
       background-color: #eee;
-      padding: 20px 5px;
+      padding: 20px 10%;
       margin: 20px 0; }
   .project section {
     margin-bottom: 30px; }
@@ -286,35 +234,13 @@ header {
   background-color: #eee;
   padding: 50px; }
 
-#sign-up-response {
-  text-align: center;
-  padding-bottom: 20px; }
-
-.response-waiting {
-  color: #d8bd1e; }
-
-.response-success {
-  color: #0fba34; }
-
-.response-error {
-  color: #ba1c0f; }
-
 .form {
   width: 60%;
   margin: 0 auto; }
-  @media (max-width: 800px) {
-    .form {
-      width: 90%; }
-      .form label {
-        font-size: 20px;
-        padding-left: 15px;
-        margin-bottom: 40px; }
-      .form .form-control {
-        margin: 10px 0px 15px 0px; } }
   .form h1 {
     text-align: center;
-    font-size: 34px; }
-  .form #submit {
+    font-size: 38px; }
+  .form button {
     display: inline-block;
     text-align: center;
     cursor: pointer;
@@ -326,62 +252,4 @@ header {
     color: #fff;
     border: 1px solid transparent; }
 
-/** other pages **/
-.header {
-  height: 40vh;
-  background: url("img/bridge.jpg");
-  background-size: cover; }
-  .header:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 60vh;
-    left: 0;
-    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
-    opacity: .8; }
-  .header h1 {
-    position: relative;
-    text-align: center;
-    top: 40%;
-    width: 80%;
-    color: #fff;
-    margin: 0 auto; }
-
-.progress h2 {
-  margin-left: 2.5%; }
-.progress li {
-  margin-left: 15px; }
-.progress .grid-4 {
-  background-color: #eee;
-  padding: 30px;
-  box-sizing: border-box; }
-.progress h3 {
-  font-family: "Lato";
-  margin-bottom: 20px; }
-
-.footer {
-  height: 100px;
-  background-color: #1e1e1e;
-  color: #848484;
-  font-size: 14px; }
-
-.press ul {
-  list-style-type: none; }
-.press li {
-  padding-bottom: 20px; }
-.press a {
-  font-size: 18px;
-  border-bottom: 1px solid #1e1e1e; }
-
 /*# sourceMappingURL=style.css.map */
-
-img.left-img {
-  float:left;
-  width: 180px;
-  margin-right: 0.3em;
-}
-
-p.right-paragraph {
-
-}
