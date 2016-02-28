@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title id="localwikititle">LocalWiki example</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+        <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+	<div id="localwikipage"></div>
+	  
+  <script>
+    var url = "https://localwiki.org/api/v4/pages/?region__slug=trenton&format=json";
+    //var url = "https://localwiki.org/api/v4/pages/?region__slug=trenton&nam=Downtown&format=json";	// for Downtown page
+	
+  	/*
+  	$.getJSON(pages).done(function(pageData){
+		var pages = pageData["results"];
+		var page = pages[2];
+		$('#dataname').text(page.url + " | " + page.name);
+	});
+	*/
+	
+    $.ajax( url, {
+    	dataType:'jsonp',
+    	crossDomain: true,
+    	jsonpCallback:'gatherData'
+    });
+    function gatherData( data ) {
+		/*
+		$.each(data.result.records, function() {
+			$.each(this, function(index, element) {
+				var $new_row = "<tr><td>"+element.Name+"</td><td>"+element.Street+"</td><td>"+element.Phone+"</td></tr>";
+				$('#myTable').append($new_row);
+			});
+		});
+		*/
+		$('#localwikititle').innerHTML("LocalWiki example | Downtown Trenton");
+		
+		for(var key in data.results) {
+		    if(data.results.hasOwnProperty(key)) {
+				var e	= data.results[key];	// e is for element :D
+				/*
+					"url": "https://localwiki.org/api/v4/pages/222522/",
+					"name": "Downtown",
+					"slug": "downtown",
+					"content": "<p>\n\tWhat do you know about Downtown Trenton?</p>\n",
+					"region": "https://localwiki.org/api/v4/regions/965/",
+					"tags": []
+				*/
+				var $new_row = "<tr><td>"+e.Name+'</td><td><a href="https://www.google.com/maps/@'+e.Latitude+","+e.Longitude+',16z">'+e.Street+"</a></td><td>";
+				if(e.Phone != "blank") {
+					$new_row = $new_row + '<a href="tel:'+e.Phone+'">'+e.Phone+"</a>";
+				} else {
+					$new_row = $new_row + e.Phone;
+				}
+				$new_row = $new_row + "</td></tr>";
+				$('#restaurantsTable').append($new_row);
+		    }
+		}
+		
+		$('#restaurantsTable').DataTable({ "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]] });
+	}
+</script>
+</body>
+</html>
